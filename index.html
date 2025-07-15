@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Price Prediction</title>
+</head>
+<body>
+    <h1>Vegetable Price Prediction</h1>
+    <form method="POST">
+        <label for="vegetable">Vegetable:</label>
+        <input type="text" id="vegetable" name="vegetable" required><br><br>
+
+        <label for="month">Month:</label>
+        <input type="text" id="month" name="month" required><br><br>
+
+        <label for="season">Season:</label>
+        <input type="text" id="season" name="season" required><br><br>
+
+        <label for="temp">Temperature:</label>
+        <input type="number" id="temp" name="temp" required><br><br>
+
+        <label for="disaster">Disaster in the last 3 months? (yes/no):</label>
+        <input type="text" id="disaster" name="disaster" required><br><br>
+
+        <input type="submit" value="Predict Price">
+    </form>
+
+    {% if predicted_price is not none %}
+        <h2>Predicted Price: {{ predicted_price }}</h2>
+    {% endif %}
+</body>
+</html>
